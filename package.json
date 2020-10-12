@@ -10,7 +10,7 @@
         "build:lib": "tsc --project .",
         "build:toc": "doctoc --notitle README.md",
         "clean": "rimraf *.js *.d.ts *.js.*",
-        "postinstall": "npm run build"
+        "prepare": "npm run build"
     },
     "repository": {
         "type": "git",
