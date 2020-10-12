@@ -60,6 +60,8 @@ var HorizontalScroll = /** @class */ (function (_super) {
         // ignore keydown events when any of these elements are focused
         _this.blacklist = ['input', 'select', 'textarea'];
         _this.wheel = function (e) {
+            if (e.ctrlKey) // Ignore scroll event if ctrl key pressed
+                return;
             e.preventDefault();
             var angle = Math.atan2(e.deltaY, e.deltaX) / Math.PI;
             var forward = !(angle < 0.675 && angle > -0.375);
